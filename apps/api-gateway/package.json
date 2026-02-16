@@ -1,0 +1,10 @@
+{
+  "name": "@apps/api-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "docker compose up -d kong",
+    "lint": "echo 'kong config lint placeholder'",
+    "test": "echo 'kong integration tests placeholder'"
+  }
+}

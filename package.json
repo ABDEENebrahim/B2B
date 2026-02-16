@@ -1,0 +1,21 @@
+{
+  "name": "b2b-marketplace",
+  "version": "0.1.0",
+  "private": true,
+  "description": "B2B marketplace monorepo powered by Turborepo + pnpm workspaces",
+  "packageManager": "pnpm@9.12.3",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write .",
+    "setup": "bash scripts/setup.sh"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "turbo": "^2.1.3",
+    "typescript": "^5.6.3"
+  }
+}
