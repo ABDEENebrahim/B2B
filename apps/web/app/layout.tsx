@@ -1,6 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { ReactNode } from 'react';
+import { Footer } from '../src/components/layout/footer';
+import { Header } from '../src/components/layout/header';
 
 export const metadata: Metadata = {
   title: 'B2B Marketplace',
@@ -10,7 +12,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Header />
+        <div className="mx-auto min-h-[calc(100vh-140px)] w-full max-w-6xl px-6 py-8">{children}</div>
+        <Footer />
+      </body>
     </html>
   );
 }
