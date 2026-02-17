@@ -1,14 +1,14 @@
-import Link from 'next/link';
+import { SupplierCard } from '../../src/components/ui/supplier-card';
+import { featuredSuppliers } from '../../src/lib/mock-data';
 
 export default function SuppliersPage() {
   return (
     <section>
-      <h1 className="text-2xl font-semibold">Suppliers</h1>
-      <div className="mt-4 space-y-3">
-        {['s-100', 's-200', 's-300'].map((id) => (
-          <Link key={id} className="block rounded border border-slate-800 bg-slate-900 p-4 hover:border-slate-700" href={`/suppliers/${id}`}>
-            Supplier {id}
-          </Link>
+      <h1 className="text-2xl font-semibold">Verified Supplier Directory</h1>
+      <p className="mt-2 text-slate-300">Shortlist trusted manufacturers and trading companies by capability and response rate.</p>
+      <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {featuredSuppliers.map((supplier) => (
+          <SupplierCard key={supplier.id} supplier={supplier} />
         ))}
       </div>
     </section>
