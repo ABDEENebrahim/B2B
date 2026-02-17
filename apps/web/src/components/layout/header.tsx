@@ -26,10 +26,27 @@ export function Header() {
         <Link href="/" className="shrink-0 text-xl font-bold text-white">
           B2B Market
         </Link>
-        <div className="flex-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-400">
-          Search products, suppliers, categories...
+
+        <div className="flex flex-1 items-center overflow-hidden rounded-lg border border-slate-700 bg-slate-900">
+          <select className="border-r border-slate-700 bg-slate-900 px-3 py-2 text-xs text-slate-300">
+            <option>Products</option>
+            <option>Suppliers</option>
+            <option>RFQs</option>
+          </select>
+          <input
+            className="w-full bg-transparent px-3 py-2 text-sm text-slate-100 outline-none"
+            placeholder="Search products, suppliers, categories..."
+          />
+          <button className="bg-cyan-600 px-4 py-2 text-sm font-semibold text-white">Search</button>
         </div>
+
         <div className="flex gap-2">
+          <Link
+            href="/rfqs"
+            className="hidden rounded border border-cyan-700 bg-cyan-950 px-3 py-1 text-sm text-cyan-300 md:inline-block"
+          >
+            Post RFQ
+          </Link>
           <Link href="/auth/login" className="rounded border border-slate-700 px-3 py-1 text-sm">
             Login
           </Link>
