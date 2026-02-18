@@ -8,6 +8,14 @@ export interface ProductCardData {
   badges?: string[];
 }
 
+export interface ProductDetailData extends ProductCardData {
+  leadTime: string;
+  capacity: string;
+  paymentTerms: string;
+  certifications: string[];
+  specs: Array<{ label: string; value: string }>;
+}
+
 export interface RfqCardData {
   id: string;
   title: string;
@@ -111,6 +119,48 @@ export const featuredProducts: ProductCardData[] = [
   },
 ];
 
+export const productDetails: ProductDetailData[] = [
+  {
+    ...featuredProducts[0],
+    leadTime: '18-25 days',
+    capacity: '4.5M pcs/month',
+    paymentTerms: 'T/T 30% deposit, 70% before shipment',
+    certifications: ['ISO 9001', 'RoHS'],
+    specs: [
+      { label: 'Material', value: '304 Stainless Steel' },
+      { label: 'Standard', value: 'DIN933' },
+      { label: 'Thread Type', value: 'Metric Coarse' },
+      { label: 'Surface', value: 'Passivated' },
+    ],
+  },
+  {
+    ...featuredProducts[4],
+    leadTime: '12-18 days',
+    capacity: '12,000 units/month',
+    paymentTerms: 'L/C at sight, T/T',
+    certifications: ['CE', 'IEC 62109'],
+    specs: [
+      { label: 'Power', value: '10kW' },
+      { label: 'Efficiency', value: '98.2%' },
+      { label: 'Input Voltage', value: '200-1000V DC' },
+      { label: 'Protection', value: 'IP65' },
+    ],
+  },
+  {
+    ...featuredProducts[7],
+    leadTime: '20-28 days',
+    capacity: '35,000 roller sets/month',
+    paymentTerms: 'T/T, D/P',
+    certifications: ['ISO 14001', 'ISO 45001'],
+    specs: [
+      { label: 'Tube Diameter', value: '50mm / 60mm / custom' },
+      { label: 'Shaft', value: 'Spring-loaded steel shaft' },
+      { label: 'Bearing', value: '6202 ZZ' },
+      { label: 'Surface', value: 'Zinc plated / PVC coated' },
+    ],
+  },
+];
+
 export const recentRfqs: RfqCardData[] = [
   { id: 'r-1', title: 'RFQ for 50,000 M8 bolts', quantity: '50,000 pcs', deadline: '2026-03-05', region: 'Germany' },
   { id: 'r-2', title: 'RFQ for PET packaging rolls', quantity: '120 tons', deadline: '2026-03-12', region: 'UAE' },
@@ -131,4 +181,24 @@ export const featuredSuppliers: SupplierData[] = [
   { id: 's-600', name: 'Monterrey Auto Components SA', country: 'Mexico', years: 11, verified: false, responseRate: '89%' },
   { id: 's-700', name: 'Ho Chi Minh FastBuild Materials', country: 'Vietnam', years: 6, verified: true, responseRate: '96%' },
   { id: 's-800', name: 'Johannesburg Energy Storage Ltd', country: 'South Africa', years: 7, verified: true, responseRate: '93%' },
+];
+
+export const dashboardStats = [
+  { label: 'Active RFQs', value: '14', trend: '+3 this week' },
+  { label: 'Pending Quotes', value: '27', trend: '+8 in 24h' },
+  { label: 'Orders in Production', value: '9', trend: '2 due this week' },
+  { label: 'Unread Messages', value: '18', trend: '6 high priority' },
+];
+
+export const recentMessages = [
+  { from: 'Qingdao Metals Global', subject: 'Quote update for M8 bolts', time: '12m ago' },
+  { from: 'EuroPak Materials GmbH', subject: 'Lead time confirmation', time: '1h ago' },
+  { from: 'Guangzhou Green Energy Tech', subject: 'Sample shipment dispatched', time: '3h ago' },
+];
+
+export const sourcingPlaybook = [
+  'Shortlist suppliers using verification and response rate',
+  'Request samples for top 3 suppliers before mass order',
+  'Use milestone payment with inspection before final release',
+  'Lock annual framework agreement for stable pricing',
 ];
