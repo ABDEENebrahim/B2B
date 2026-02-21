@@ -1,0 +1,50 @@
+_format_version: "3.0"
+_transform: true
+
+services:
+  - name: user-service
+    url: http://user-service:3001
+    routes:
+      - name: user-service-route
+        paths:
+          - /users
+          - /auth
+
+  - name: product-service
+    url: http://product-service:3002
+    routes:
+      - name: product-service-route
+        paths:
+          - /products
+          - /categories
+
+  - name: rfq-service
+    url: http://rfq-service:3003
+    routes:
+      - name: rfq-service-route
+        paths:
+          - /rfqs
+          - /quotes
+
+  - name: order-service
+    url: http://order-service:3004
+    routes:
+      - name: order-service-route
+        paths:
+          - /orders
+
+  - name: payment-service
+    url: http://payment-service:3005
+    routes:
+      - name: payment-service-route
+        paths:
+          - /payments
+          - /escrow
+
+  - name: messaging-service
+    url: http://messaging-service:3006
+    routes:
+      - name: messaging-service-route
+        paths:
+          - /messages
+          - /conversations
