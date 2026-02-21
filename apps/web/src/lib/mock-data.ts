@@ -33,6 +33,25 @@ export interface SupplierData {
   responseRate: string;
 }
 
+export interface RfqTemplate {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  suggestedLeadTime: string;
+  requiredDocs: string[];
+}
+
+export interface QuoteComparisonRow {
+  supplier: string;
+  unitPrice: number;
+  moq: number;
+  leadTimeDays: number;
+  paymentTerms: string;
+  qualityScore: number;
+  riskLevel: 'Low' | 'Medium' | 'High';
+}
+
 export const marketplaceCategories = [
   'Industrial Machinery',
   'Electrical Equipment',
@@ -202,3 +221,80 @@ export const sourcingPlaybook = [
   'Use milestone payment with inspection before final release',
   'Lock annual framework agreement for stable pricing',
 ];
+
+export const nextBestActions = [
+  {
+    title: 'Approve sample before Mar 12',
+    detail: 'Supplier: EuroPak Materials GmbH · RFQ r-2',
+    impact: 'Avoids 5-day production delay',
+  },
+  {
+    title: 'Invite 2 backup suppliers',
+    detail: 'RFQ r-6 has only 1 qualified quote',
+    impact: 'Improves negotiating leverage by 12%',
+  },
+  {
+    title: 'Release milestone payment',
+    detail: 'Order #PO-2041 inspection passed',
+    impact: 'Keeps shipment on schedule',
+  },
+];
+
+export const rfqTemplates: RfqTemplate[] = [
+  {
+    id: 'tpl-1',
+    name: 'Standard Fasteners Sourcing',
+    category: 'Tools & Hardware',
+    description: 'Optimized template for bolt/nut/washer repeat purchases.',
+    suggestedLeadTime: '25-35 days',
+    requiredDocs: ['Material certificate', 'Salt spray test report'],
+  },
+  {
+    id: 'tpl-2',
+    name: 'OEM Injection Molding',
+    category: 'Industrial Machinery',
+    description: 'For custom molded parts with tooling and sample stages.',
+    suggestedLeadTime: '35-55 days',
+    requiredDocs: ['DFM report', 'Mold flow analysis', 'FAI report'],
+  },
+  {
+    id: 'tpl-3',
+    name: 'Electronics Assembly',
+    category: 'Consumer Electronics',
+    description: 'For PCBA/assembly with strict QA and compliance checks.',
+    suggestedLeadTime: '20-40 days',
+    requiredDocs: ['CE/FCC compliance', 'BOM breakdown'],
+  },
+];
+
+export const quoteComparisonByRfqId: Record<string, QuoteComparisonRow[]> = {
+  'r-1': [
+    {
+      supplier: 'Qingdao Metals Global',
+      unitPrice: 0.11,
+      moq: 50000,
+      leadTimeDays: 21,
+      paymentTerms: '30/70 T/T',
+      qualityScore: 92,
+      riskLevel: 'Low',
+    },
+    {
+      supplier: 'Ningbo Fasteners Co., Ltd.',
+      unitPrice: 0.105,
+      moq: 60000,
+      leadTimeDays: 28,
+      paymentTerms: '50/50 T/T',
+      qualityScore: 88,
+      riskLevel: 'Medium',
+    },
+    {
+      supplier: 'Monterrey Auto Components SA',
+      unitPrice: 0.13,
+      moq: 40000,
+      leadTimeDays: 24,
+      paymentTerms: 'L/C at sight',
+      qualityScore: 84,
+      riskLevel: 'High',
+    },
+  ],
+};

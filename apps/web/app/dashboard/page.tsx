@@ -1,5 +1,11 @@
 import Link from 'next/link';
-import { dashboardStats, recentMessages, recentRfqs, sourcingPlaybook } from '../../src/lib/mock-data';
+import {
+  dashboardStats,
+  nextBestActions,
+  recentMessages,
+  recentRfqs,
+  sourcingPlaybook,
+} from '../../src/lib/mock-data';
 
 const dashboardLinks = [
   { href: '/dashboard/rfqs', label: 'My RFQs' },
@@ -27,6 +33,24 @@ export default function DashboardHomePage() {
             <p className="mt-1 text-xs text-cyan-300">{item.trend}</p>
           </article>
         ))}
+      </div>
+
+      <div className="rounded-xl border border-cyan-900 bg-cyan-950/30 p-4">
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-lg font-semibold text-cyan-200">Next best actions</h2>
+          <Link href="/rfqs/new" className="text-xs text-cyan-300">
+            Launch RFQ Copilot →
+          </Link>
+        </div>
+        <div className="grid gap-3 md:grid-cols-3">
+          {nextBestActions.map((action) => (
+            <article key={action.title} className="rounded border border-cyan-900 bg-slate-950/60 p-3">
+              <p className="text-sm font-semibold">{action.title}</p>
+              <p className="mt-1 text-xs text-slate-300">{action.detail}</p>
+              <p className="mt-2 text-xs text-cyan-300">Impact: {action.impact}</p>
+            </article>
+          ))}
+        </div>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">

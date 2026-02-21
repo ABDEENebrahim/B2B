@@ -42,10 +42,10 @@ export function Header() {
 
         <div className="flex gap-2">
           <Link
-            href="/rfqs"
+            href="/rfqs/new"
             className="hidden rounded border border-cyan-700 bg-cyan-950 px-3 py-1 text-sm text-cyan-300 md:inline-block"
           >
-            Post RFQ
+            RFQ Copilot
           </Link>
           <Link href="/auth/login" className="rounded border border-slate-700 px-3 py-1 text-sm">
             Login

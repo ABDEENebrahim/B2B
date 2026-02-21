@@ -46,7 +46,7 @@ export default function HomePage() {
           <Link href="/products" className="rounded bg-cyan-600 px-5 py-2 font-medium text-white">
             Source Products
           </Link>
-          <Link href="/rfqs" className="rounded border border-slate-600 px-5 py-2 font-medium text-slate-100">
+          <Link href="/rfqs/new" className="rounded border border-slate-600 px-5 py-2 font-medium text-slate-100">
             Submit RFQ
           </Link>
         </div>
@@ -134,7 +134,7 @@ export default function HomePage() {
               Post one RFQ and receive matched quotations from verified factories across key sourcing regions.
             </p>
           </div>
-          <Link href="/rfqs" className="rounded bg-cyan-600 px-5 py-2 text-sm font-semibold text-white">
+          <Link href="/rfqs/new" className="rounded bg-cyan-600 px-5 py-2 text-sm font-semibold text-white">
             Start Sourcing Now
           </Link>
         </div>

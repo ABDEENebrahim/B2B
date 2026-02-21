@@ -35,7 +35,7 @@ export default function ProductsPage() {
           <div className="rounded-xl border border-cyan-900 bg-cyan-950/30 p-4">
             <h2 className="text-sm font-semibold text-cyan-300">Can't find exact specs?</h2>
             <p className="mt-2 text-xs text-slate-300">Post an RFQ and let suppliers quote to your custom requirements.</p>
-            <a href="/rfqs" className="mt-3 inline-block rounded bg-cyan-600 px-3 py-1.5 text-xs font-semibold text-white">
+            <a href="/rfqs/new" className="mt-3 inline-block rounded bg-cyan-600 px-3 py-1.5 text-xs font-semibold text-white">
               Post RFQ
             </a>
           </div>
